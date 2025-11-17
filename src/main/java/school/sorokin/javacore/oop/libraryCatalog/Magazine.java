@@ -10,6 +10,19 @@ public class Magazine extends Publication implements Printable {
         this.issueNumber = issueNumber;
     }
 
+    public int getIssueNumber() {
+        return issueNumber;
+    }
+
+    public void setIssueNumber(int issueNumber) {
+        this.issueNumber = issueNumber;
+    }
+
+    @Override
+    public String toString(){
+        return "Название: " + getTitle() + ", Автор: " + getAuthor() + ", Год выпуска: " + getYear() + ", Номер выпуска: " + getIssueNumber();
+    }
+
     @Override
     public void printDetails() {
         System.out.println(this);
@@ -17,7 +30,7 @@ public class Magazine extends Publication implements Printable {
 
     @Override
     public String getType() {
-        return "Magazine";
+        return "Журнал";
     }
 
     @Override

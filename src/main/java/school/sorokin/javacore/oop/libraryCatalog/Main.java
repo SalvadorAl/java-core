@@ -4,6 +4,10 @@ import java.util.Scanner;
 public class Main {
     private static final Scanner scanner = new Scanner(System.in);
     private static final Library library = new Library();
+    private static final String TITLE = "Введите название: ";
+    private static final String AUTHOR = "Введите автора: ";
+    private static final String YEAR = "Введите год: ";
+
     public static void main(String[] args) {
 
 
@@ -42,7 +46,7 @@ public class Main {
         }
     }
     private static void addPublicationMenu() {
-        System.out.println("Выберите тип публикации: 1 — Book, 2 — Magazine, 3 — Newspaper");
+        System.out.println("Выберите тип публикации: 1 — Книга, 2 — Журнал, 3 — Газета");
         String type = scanner.nextLine().trim();
         switch (type) {
             case "1": addBook(); break;
@@ -53,15 +57,15 @@ public class Main {
     }
 
     private static void addBook() {
-        System.out.print("Введите название: ");
+        System.out.print(TITLE);
         String title = scanner.nextLine().trim();
 
-        System.out.print("Введите автора: ");
+        System.out.print(AUTHOR);
         String author = scanner.nextLine().trim();
 
         int year;
         while (true) {
-            System.out.print("Введите год: ");
+            System.out.print(YEAR);
             String s = scanner.nextLine().trim();
             try { year = Integer.parseInt(s); break; }
             catch (NumberFormatException e) { System.out.println("Ожидается целое число."); }
@@ -75,15 +79,15 @@ public class Main {
     }
 
     private static void addMagazine() {
-        System.out.print("Введите название: ");
+        System.out.print(TITLE);
         String title = scanner.nextLine().trim();
 
-        System.out.print("Введите автора: ");
+        System.out.print(AUTHOR);
         String author = scanner.nextLine().trim();
 
         int year;
         while (true) {
-            System.out.print("Введите год: ");
+            System.out.print(YEAR);
             String s = scanner.nextLine().trim();
             try { year = Integer.parseInt(s); break; }
             catch (NumberFormatException e) { System.out.println("Ожидается целое число."); }
@@ -102,15 +106,15 @@ public class Main {
     }
 
     private static void addNewspaper() {
-        System.out.print("Введите название: ");
+        System.out.print(TITLE);
         String title = scanner.nextLine().trim();
 
-        System.out.print("Введите автора: ");
+        System.out.print(AUTHOR);
         String author = scanner.nextLine().trim();
 
         int year;
         while (true) {
-            System.out.print("Введите год: ");
+            System.out.print(YEAR);
             String s = scanner.nextLine().trim();
             try { year = Integer.parseInt(s); break; }
             catch (NumberFormatException e) { System.out.println("Ожидается целое число."); }

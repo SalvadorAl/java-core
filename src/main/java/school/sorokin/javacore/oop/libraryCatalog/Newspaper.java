@@ -10,14 +10,27 @@ public class Newspaper extends Publication implements Printable {
         this.publicationDay = publicationDay;
     }
 
+    public String getPublicationDay() {
+        return publicationDay;
+    }
+
+    public void setPublicationDay(String publicationDay) {
+        this.publicationDay = publicationDay;
+    }
+
     @Override
     public void printDetails() {
         System.out.println(this);
     }
 
     @Override
+    public String toString(){
+        return "Название: " + getTitle() + ", Автор: " + getAuthor() + ", Год выпуска: " + getYear() + ", День публикации: " + getPublicationDay();
+    }
+
+    @Override
     public String getType() {
-        return "Newspaper";
+        return "Газета";
     }
 
     @Override

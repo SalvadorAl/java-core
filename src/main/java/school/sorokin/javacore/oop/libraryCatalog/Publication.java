@@ -12,6 +12,9 @@ public abstract class Publication {
         this.title = title;
         this.author = author;
         this.year = year;
+    }
+
+    public static void publicationCount() {
         publicationCount++;
     }
 
@@ -51,22 +54,17 @@ public abstract class Publication {
     }
 
     @Override
-    public int hashCode() {
-        int result = 31;
-        result = 31 * result + (title != null ? title.hashCode() : 0);
-        result = 31 * result + (author != null ? author.hashCode() : 0);
-        result = 31 * result + year;
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Publication that = (Publication) o;
+        return year == that.year && Objects.equals(title, that.title) && Objects.equals(author, that.author);
     }
 
     @Override
-    public boolean equals(Object obj){
-        if (this == obj) return true;
-        if (obj == null || getClass() != obj.getClass()) return false;
-        Publication publication = (Publication) obj;
-        return (title != null ? title.equals(publication.title) : publication.title == null)
-                && (author != null ? author.equals(publication.author) : publication.author == null)
-                && year == publication.year;
-
+    public int hashCode() {
+        return Objects.hash(title, author, year);
     }
 }
+
+

@@ -18,9 +18,15 @@ public class Book extends Publication implements Printable {
         this.isbn = isbn;
     }
 
+    @Override
     public String getType(){
-        return "Book";
+        return "Книга";
     }
+    @Override
+    public String toString(){
+        return "Название: " + getTitle() + ", Автор: " + getAuthor() + ", Год выпуска: " + getYear() + ", ISBN: " + getIsbn();
+    }
+
     @Override
     public void printDetails(){
         System.out.println(this);
